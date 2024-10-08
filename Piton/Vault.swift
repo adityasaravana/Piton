@@ -9,7 +9,7 @@ import Foundation
 import Valet
 
 class Vault: ObservableObject {
-    let valet = SecureEnclaveValet.valet(with: Identifier(nonEmpty: "com.adityasaravana.Piton")!, accessControl: .userPresence)
+    let valet = SinglePromptSecureEnclaveValet.valet(with: Identifier(nonEmpty: "com.adityasaravana.Piton")!, accessControl: .userPresence)
     
     @Published var screenTimePassword: String = "" {
         didSet {
@@ -22,12 +22,16 @@ class Vault: ObservableObject {
         }
     }
     
-    func readScreenTimePassword() -> String? {
+    func readScreenTimePassword() -> String {
         do {
             let password = try valet.string(forKey: Constants.screenTimePasswordSecureEnclaveKey, withPrompt: "")
             return password
         } catch {
-            return nil
+            return ""
         }
+    }
+    
+    init() {
+        self.screenTimePassword = readScreenTimePassword()
     }
 }
