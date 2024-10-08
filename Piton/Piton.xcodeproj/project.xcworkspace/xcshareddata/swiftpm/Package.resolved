@@ -1,0 +1,15 @@
+{
+  "originHash" : "79beb789fb6da70b8a44dfae3b28d070221708613a2b0b08633a36776e70a55b",
+  "pins" : [
+    {
+      "identity" : "mipincodeview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/markhorix/MIPinCodeView.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e4d214f68604042d8c2350a671eaf2bdb1661361"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -11,6 +11,8 @@
 		6B6B6A752CB4BA8B00543896 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6B6A742CB4BA8B00543896 /* ContentView.swift */; };
 		6B6B6A772CB4BA8C00543896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B6B6A762CB4BA8C00543896 /* Assets.xcassets */; };
 		6B6B6A7A2CB4BA8C00543896 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B6B6A792CB4BA8C00543896 /* Preview Assets.xcassets */; };
+		6B6B6A822CB4BD2C00543896 /* SetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6B6A812CB4BD2C00543896 /* SetPasswordView.swift */; };
+		6B6B6A852CB4BD5600543896 /* MIPinCodeView in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6B6A842CB4BD5600543896 /* MIPinCodeView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		6B6B6A742CB4BA8B00543896 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6B6B6A762CB4BA8C00543896 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B6B6A792CB4BA8C00543896 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6B6B6A812CB4BD2C00543896 /* SetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6B6A852CB4BD5600543896 /* MIPinCodeView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				6B6B6A742CB4BA8B00543896 /* ContentView.swift */,
+				6B6B6A812CB4BD2C00543896 /* SetPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +96,9 @@
 			dependencies = (
 			);
 			name = Piton;
+			packageProductDependencies = (
+				6B6B6A842CB4BD5600543896 /* MIPinCodeView */,
+			);
 			productName = Piton;
 			productReference = 6B6B6A6F2CB4BA8B00543896 /* Piton.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 6B6B6A662CB4BA8B00543896;
+			packageReferences = (
+				6B6B6A832CB4BD5600543896 /* XCRemoteSwiftPackageReference "MIPinCodeView" */,
+			);
 			productRefGroup = 6B6B6A702CB4BA8B00543896 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B6B6A752CB4BA8B00543896 /* ContentView.swift in Sources */,
+				6B6B6A822CB4BD2C00543896 /* SetPasswordView.swift in Sources */,
 				6B6B6A732CB4BA8B00543896 /* PitonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,8 +300,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,8 +331,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6B6B6A832CB4BD5600543896 /* XCRemoteSwiftPackageReference "MIPinCodeView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markhorix/MIPinCodeView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6B6B6A842CB4BD5600543896 /* MIPinCodeView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B6B6A832CB4BD5600543896 /* XCRemoteSwiftPackageReference "MIPinCodeView" */;
+			productName = MIPinCodeView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B6B6A672CB4BA8B00543896 /* Project object */;
 }
