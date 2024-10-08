@@ -96,6 +96,7 @@ struct SetPasswordView: View {
                 }
                 .disabled(setPassword.count != 4)
                 .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
                 .keyboardShortcut(.defaultAction)
             }
             .alert("Your passwords don't match.", isPresented: $showPasswordsNotMatchingAlert) {
