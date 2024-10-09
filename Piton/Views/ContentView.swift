@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var vault: Vault
+    @State var showSetPasswordSheet = false
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(vault.screenTimePassword)
+            Button("Set Password") {
+                showSetPasswordSheet = true
+            }
         }
         .padding()
+        .sheet(isPresented: $showSetPasswordSheet) {
+            SetPasswordView(password: $vault.screenTimePassword, isPresented: $showSetPasswordSheet)
+        }
     }
 }
 

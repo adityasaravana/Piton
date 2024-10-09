@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct PitonApp: App {
+    let vault = Vault.shared
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(vault)
         }
     }
 }

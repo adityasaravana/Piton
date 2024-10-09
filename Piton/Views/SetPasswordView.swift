@@ -43,7 +43,6 @@ struct SetPasswordView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                
                 Spacer()
                 
                 Text(titleText).font(.headline)
@@ -79,7 +78,7 @@ struct SetPasswordView: View {
                 
                 Spacer()
                 
-                Button("Next") {
+                Button(buttonText) {
                     withAnimation {
                         switch stage {
                         case .set:
@@ -105,7 +104,7 @@ struct SetPasswordView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Cancel") {
-                        
+                        isPresented = false
                     }
                 }
             }
