@@ -51,7 +51,7 @@ struct ContentView: View {
                 print(vault.screenTimePasswordIsValid)
                 print(vault.lockType)
             }
-            .fullScreenCover(isPresented: $showSetPasswordSheet) {
+            .sheet(isPresented: $showSetPasswordSheet) {
                 SetPasswordView(password: $vault.screenTimePassword, isPresented: $showSetPasswordSheet)
             }
             .sheet(isPresented: $showRandomTextLockView) {
