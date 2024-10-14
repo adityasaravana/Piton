@@ -17,7 +17,7 @@ class Vault: ObservableObject {
         didSet {
             print("screenTimePassword changed")
             do {
-                try valet.setString(screenTimePassword, forKey: Constants.screenTimePasswordSecureEnclaveKey)
+                try valet.setString(screenTimePassword, forKey: SecureEnclaveKeys.screenTimePasswordSecureEnclaveKey)
                 print("wrote password to Secure Enclave")
             } catch {
 //                fatalError("Could not write Screen Time Password to Secure Enclave. Email aditya.saravana@icloud.com for help.")
@@ -26,9 +26,26 @@ class Vault: ObservableObject {
         }
     }
     
-    func readScreenTimePassword() -> String {
+    var screenTimePasswordIsValid: Bool {
+        return screenTimePassword.count == 4 && screenTimePassword.allSatisfy { $0.isNumber }
+    }
+    
+    @Published var lockType: LockType = .none {
+        didSet {
+            print("screenTimePassword changed")
+            do {
+                try valet.setString(LockType.encode(lockType), forKey: SecureEnclaveKeys.lockType)
+                print("wrote password to Secure Enclave")
+            } catch {
+//                fatalError("Could not write Screen Time Password to Secure Enclave. Email aditya.saravana@icloud.com for help.")
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func readFromSecureEnclave(_ key: String) -> String {
         do {
-            let password = try valet.string(forKey: Constants.screenTimePasswordSecureEnclaveKey, withPrompt: "")
+            let password = try valet.string(forKey: SecureEnclaveKeys.screenTimePasswordSecureEnclaveKey, withPrompt: "")
             return password
         } catch {
             return ""
@@ -36,6 +53,7 @@ class Vault: ObservableObject {
     }
     
     init() {
-        self.screenTimePassword = readScreenTimePassword()
+        self.screenTimePassword = readFromSecureEnclave(SecureEnclaveKeys.screenTimePasswordSecureEnclaveKey)
+        self.lockType = LockType.decode(readFromSecureEnclave(SecureEnclaveKeys.lockType))
     }
 }

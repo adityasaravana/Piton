@@ -98,6 +98,7 @@ struct SetPasswordView: View {
                 .buttonBorderShape(.capsule)
                 .keyboardShortcut(.defaultAction)
             }
+            .padding()
             .alert("Your passwords don't match.", isPresented: $showPasswordsNotMatchingAlert) {
                 Button("OK", role: .cancel) { }
             }

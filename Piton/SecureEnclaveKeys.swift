@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum Constants {
+enum SecureEnclaveKeys {
     static let screenTimePasswordSecureEnclaveKey = "com.adityasaravana.Piton.screenTimePassword"
+    static let lockType = "com.adityasaravana.Piton.lockType"
 }
